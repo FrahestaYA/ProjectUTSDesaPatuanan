@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Layanan - Desa Patuanan</title>
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --secondary-color: #4CAF50;
+            --text-color: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .services-section {
+            padding: 60px 20px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            color: var(--primary-color);
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            margin-bottom: 1.5rem;
+        }
+
+        .service-steps {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--light-bg);
+            border-radius: 10px;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 0 20px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--primary-color);
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .services-section {
+                padding: 40px 15px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 0.8rem;
+            }
+
+            .btn {
+                padding: 0.6rem 1.5rem;
+            }
+
+            .section-title {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Desa Patuanan</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="profil.html">Profil</a>
+                <a href="layanan.html">Layanan</a>
+                <a href="berita.html">Berita</a>
+                <a href="kontak.html">Kontak</a>
+                <a href="tentang.website.html">Tentang Website</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Online Desa Patuanan</h2>
+                <p>Memudahkan pelayanan administrasi untuk masyarakat</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-id-card"></i>
+                    <h3>Surat Keterangan</h3>
+                    <p>Pembuatan berbagai surat keterangan seperti domisili, tidak mampu, usaha, dll.</p>
+                    <a href="#" class="btn">Ajukan</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Administrasi Kependudukan</h3>
+                    <p>Pengurusan KTP, KK, Akta Kelahiran, dan dokumen kependudukan lainnya.</p>
+                    <a href="#" class="btn">Ajukan</a>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Perizinan</h3>
+                    <p>Pengurusan izin usaha, izin keramaian, dan perizinan lainnya.</p>
+                    <a href="#" class="btn">Ajukan</a>
+                </div>
+            </div>
+
+            <div class="service-steps">
+                <div class="section-title">
+                    <h2>Cara Pengajuan Layanan</h2>
+                    <p>Ikuti langkah-langkah berikut untuk mengajukan layanan</p>
+                </div>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3>Pilih Layanan</h3>
+                        <p>Pilih jenis layanan yang ingin diajukan sesuai kebutuhan</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3>Isi Formulir</h3>
+                        <p>Lengkapi formulir pengajuan dengan data yang benar</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3>Upload Dokumen</h3>
+                        <p>Unggah dokumen pendukung yang diperlukan</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h3>Verifikasi</h3>
+                        <p>Tunggu proses verifikasi dari petugas desa</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Desa Patuanan</h3>
+                <p>Kec. Leuwimunding, Kab. Majalengka<br>Jawa Barat, Indonesia</p>
+            </div>
+            <div>
+                <h3>Link Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="profil.html">Profil Desa</a></li>
+                    <li><a href="layanan.html">Layanan Online</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                    <li><a href="tentang.website.html">Tentang Website</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Jam Pelayanan</h3>
+                <p>Senin - Jumat<br>08:00 - 16:00 WIB</p>
+            </div>
+            <div>
+                <h3>Media Sosial</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Desa Patuanan - Leuwimunding, Majalengka</title>
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --secondary-color: #4CAF50;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/img/patuanan.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.2rem);
+            margin-bottom: 2rem;
+        }
+
+        .welcome {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+
+        .welcome-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .kades-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .news {
+            padding: 5rem 0;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .quick-info {
+            background: var(--primary-color);
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .info-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 0 20px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--primary-color);
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .welcome-grid {
+                text-align: center;
+            }
+
+            .kades-img {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .hero-content {
+                padding: 0 10px;
+            }
+
+            .btn {
+                padding: 0.6rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">Desa Patuanan</a>
+            <div class="nav-links">
+                <a href="index.html">Beranda</a>
+                <a href="profil.html">Profil</a>
+                <a href="layanan.html">Layanan</a>
+                <a href="berita.html">Berita</a>
+                <a href="kontak.html">Kontak</a>
+                <a href="tentang.website.html">Tentang Website</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di Desa Patuanan</h1>
+            <p>Membangun Desa Mandiri, Sejahtera dan Berbudaya</p>
+            <a href="layanan.html" class="btn">Layanan Online</a>
+        </div>
+    </section>
+
+    <section class="welcome">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sambutan Kepala Desa</h2>
+                <p>Bapak H. Ahmad </p>
+            </div>
+            <div class="welcome-grid">
+                <img src="assets/img/kades.jpeg" alt="Kepala Desa" class="kades-img">
+                <div>
+                    <p>Assalamualaikum Wr. Wb.</p>
+                    <p>Puji syukur kita panjatkan kepada Allah SWT atas segala nikmat dan karunia-Nya. Website ini hadir sebagai media informasi dan komunikasi antara pemerintah desa dengan masyarakat Desa Patuanan...</p>
+                    <a href="#" class="btn">Baca Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Berita Terkini</h2>
+                <p>Informasi terbaru seputar Desa Patuanan</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <img src="assets/img/jalan.png" alt="Berita 1" class="news-img">
+                    <div class="news-content">
+                        <h3>Pembangunan Jalan Desa</h3>
+                        <p>Progres pembangunan infrastruktur jalan desa mencapai 70%...</p>
+                        <a href="#" class="btn">Selengkapnya</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="assets/img/vaksin.jpeg" alt="Berita 2" class="news-img">
+                    <div class="news-content">
+                        <h3>Vaksinasi Covid-19</h3>
+                        <p>Program vaksinasi tahap kedua telah mencapai target 85%...</p>
+                        <a href="#" class="btn">Selengkapnya</a>
+                    </div>
+                </div>
+                <div class="news-card">
+                    <img src="assets/img/event.webp " alt="Berita 3" class="news-img">
+                    <div class="news-content">
+                        <h3>Festival Budaya</h3>
+                        <p>Desa Patuanan menggelar festival budaya tahunan...</p>
+                        <a href="#" class="btn">Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-item">
+                    <i class="fas fa-users"></i>
+                    <h3>3,245</h3>
+                    <p>Total Penduduk</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-home"></i>
+                    <h3>875</h3>
+                    <p>Kepala Keluarga</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>456</h3>
+                    <p>Hektar Luas Wilayah</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-building"></i>
+                    <h3>24</h3>
+                    <p>RT</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Desa Patuanan</h3>
+                <p>Kec. Leuwimunding, Kab. Majalengka<br>Jawa Barat, Indonesia</p>
+            </div>
+            <div>
+                <h3>Link Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="profil.html">Profil Desa</a></li>
+                    <li><a href="layanan.html">Layanan Online</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Jam Pelayanan</h3>
+                <p>Senin - Jumat<br>08:00 - 16:00 WIB</p>
+            </div>
+            <div>
+                <h3>Media Sosial</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

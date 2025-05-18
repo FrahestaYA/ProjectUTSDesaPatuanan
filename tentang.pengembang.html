@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <title>Tentang Pengembang Website</title>
+        <style>
+            :root {
+                --primary-color: #2E7D32;
+                --secondary-color: #4CAF50;
+                --text-color: #333;
+            }
+    
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+    
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: var(--text-color);
+            }
+    
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+                width: 100%;
+            }
+    
+            .developer-section {
+                padding: 4rem;
+            }
+    
+            .section-title {
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+    
+            .section-title h2 {
+                font-size: clamp(2rem, 4vw, 2.5rem);
+                color: var(--primary-color);
+            }
+    
+            .section-title p {
+                color: #666;
+            }
+    
+            .developer-profile {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 3rem;
+                align-items: center;
+                margin-bottom: 2rem;
+            }
+    
+            .developer-image {
+                width: 100%;
+                max-width: 300px;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+    
+            .developer-info h3 {
+                color: var(--primary-color);
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+    
+            .developer-info p {
+                margin-bottom: 1.5rem;
+            }
+    
+            .skills {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                margin-top: 1.5rem;
+            }
+    
+            .skill-tag {
+                background: var(--primary-color);
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                font-size: 0.9rem;
+            }
+    
+            .contact-info {
+                margin-top: 2rem;
+            }
+    
+            .contact-info a {
+                color: var(--primary-color);
+                text-decoration: none;
+                margin-right: 1.5rem;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+    
+            .contact-info i {
+                font-size: 1.2rem;
+            }
+    
+            @media (max-width: 768px) {
+                .developer-profile {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                }
+    
+                .developer-image {
+                    margin: 0 auto;
+                }
+    
+                .skills {
+                    justify-content: center;
+                }
+            }
+        </style>
+    </head>
+</html>
+<body>
+    <section class="developer-section">
+        <div class="container">
+        <div class="section-title">
+            <h2>Tentang Website</h2>
+            <p>Website ini adalah website resmi Desa Patuanan yang dikembangkan oleh Tiyas Frahesta</p>
+        </div>
+
+        <div class="developer-profile" >
+            <img src="assets/img/icon.jpg" alt="Foto Pengembang" class="developer-image">
+            <div class="developer-info">
+                <h3>Tiyas Frahesta</h3>
+                <p>Network Engineer & Web Developer</p>
+                <p>Saya adalah seorang Network Engineer dan Web Developer yang berfokus pada pengembangan website dan infrastruktur jaringan. Dengan pengalaman dalam kedua bidang ini, saya berkomitmen untuk membangun website yang tidak hanya menarik secara visual dan mudah digunakan, tetapi juga memiliki performa dan keamanan yang optimal untuk melayani masyarakat Desa Patuanan.</p>
+                <div class="skills">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">PHP</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">Networking</span>
+                </div>
+                <div class="contact-info">
+                    <a href="mailto:TiyasFrahesta1@gmail.com"><i class="fas fa-envelope"></i> TiyasFrahesta1@gmail.com</a>
+                    <a href="https://github.com/FrahestaYA" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
+
